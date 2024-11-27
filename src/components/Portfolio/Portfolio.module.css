@@ -1,0 +1,51 @@
+.container {
+	display: flex;
+	padding-block: 2.5rem;
+	flex-direction: column;
+	gap: 3.5rem;
+	align-self: stretch;
+	color: white;
+}
+
+.title {
+	text-align: center;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+}
+.subtitle {
+	text-align: center;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
+}
+
+.grid > img {
+	margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+	.container {
+		padding-top: 6.25rem;
+		padding-bottom: 9rem;
+		gap: 6rem;
+	}
+	.title {
+		font-size: 2.5rem;
+	}
+	.subtitle {
+		font-size: 1.25rem;
+	}
+	.grid {
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		column-gap: 4rem;
+		row-gap: 6rem;
+	}
+}

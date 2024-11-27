@@ -1,0 +1,83 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-block: 2.5rem;
+	position: relative;
+}
+.container > div:first-of-type {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.nav ul li:not(:last-child) a {
+	color: #fff;
+}
+.nav ul li a {
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.hamburger {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	background-color: transparent;
+	border: 0;
+}
+
+@media (max-width: 768px) {
+	.nav {
+		position: relative;
+		position: fixed;
+		inset: 0;
+		height: 100%;
+		width: 100%;
+		border-radius: 0.5rem;
+		transform: translateX(-100%);
+		background-image: url("/images/nav_bg.png");
+		background-position: center;
+		background-size: cover;
+	}
+	.open .nav {
+		transform: translateX(0);
+	}
+	.open nav ul {
+		max-width: 180px;
+		width: 100%;
+		height: 100%;
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		margin-left: auto;
+		padding-top: 14rem;
+	}
+	.open .hamburger {
+		position: absolute;
+		top: 2.5rem;
+		right: 1.5rem;
+		z-index: 10;
+	}
+	.nav ul li:not(:last-child) a {
+		color: black;
+	}
+}
+
+@media (min-width: 768px) {
+	.container > div:first-of-type {
+		width: fit-content;
+	}
+	.nav ul {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+	.hamburger {
+		display: none;
+	}
+}
